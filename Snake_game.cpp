@@ -1,25 +1,3 @@
-/*				
-					DESIGN IDEA
-		Menu
-			PLAY
-			EXIT
-		GamePlay
-			Wall
-				4 Wall
-			Snake
-				Draw
-					Head
-					Body
-				Move
-					Up,Down,Right,Left
-			Point
-				Random in Scence  
-				Respawn when eaten ( Don't respawn in Body)
-				Upgrade Snake's Body
-			GameOver
-				Head go to the Wall
-				Head eat the Body
-*/
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -79,15 +57,6 @@ void save(int &);
 void relife(int );
 bool f_relife();
 void delete_snake();
-//int rate(int &,int &);
-/*
-void score();
-void show_timer(int &);
-void count_life();
-void effect(int);
-
-int effect_point();
-*/
 //======================
 
 int main(){
@@ -119,10 +88,6 @@ void play(){
 	//----Gameplay--
 	int x=toadoX[0];
 	int y=toadoY[0];
-					/* 	0:Down
-					 	1:Up
-					 	2:Right
-					 	3:Left	*/
 	while(true){
 		SetColor(14);
 		if(f_relife()){
@@ -217,6 +182,10 @@ void draw_snake(){
 	}
 }
 void control(int &check,int &x,int &y){
+/* 	0:Down
+	1:Up
+	2:Right
+	3:Left	*/
 	if(_kbhit()){
 		char c= _getch();
 		if(c== -32){
@@ -370,20 +339,3 @@ void delete_snake(){
 		cout<<" ";
 	}
 }
-/*
-int rate(int &rand_p,int &count_rate){
-	switch(rand_p){
-		case 3:{
-			int temp=rand()%2;
-			if(temp==1&&count_rate<6)
-				count_rate++;
-			if(count_rate==5){
-				count_rate=0;
-				return 3;
-			}else
-				rand_p=rand()%3+1;
-			break;
-		}
-	}
-}
-*/
