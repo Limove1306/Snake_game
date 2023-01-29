@@ -76,13 +76,13 @@ void play(){
 	int ra=rand_p();
 	int flag_ra=0;
 	//----BUILD-----
+	score();
+	life_count(); 
 		// Draw Wall
 	wall();
 		// Make Snake
 	snake();
 		//Fruit_Zero
-	score();
-	life_count(); 
 	make_Fruit();
 	draw_Fruit(ra);
 	//----Gameplay--
